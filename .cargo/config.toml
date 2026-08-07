@@ -1,0 +1,5 @@
+# Local build config. The rustup toolchain's bundled lld wrapper points at a
+# garbage-collected nix store path; the system linker works, so opt out of the
+# self-contained lld default.
+[build]
+rustflags = ["-Clinker-features=-lld"]
